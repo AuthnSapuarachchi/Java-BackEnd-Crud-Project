@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>BookingFormServlet</servlet-name>
+		<servlet-class>sliit.eventmng.controller.BookingFormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookingFormServlet</servlet-name>
+		<url-pattern>/bookingForm</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>BookinginsertServlet</servlet-name>
+		<servlet-class>sliit.eventmng.controller.BookinginsertServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookinginsertServlet</servlet-name>
+		<url-pattern>/insertBooking</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BookingListServlet</servlet-name>
+		<servlet-class>sliit.eventmng.controller.BookingListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookingListServlet</servlet-name>
+		<url-pattern>/booking</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>BookingEditServlet</servlet-name>
+		<servlet-class>sliit.eventmng.controller.BookingEditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookingEditServlet</servlet-name>
+		<url-pattern>/editBooking</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>BookingDeleteServlet</servlet-name>
+		<servlet-class>sliit.eventmng.controller.BookingDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookingDeleteServlet</servlet-name>
+		<url-pattern>/deleteBooking</url-pattern>
+	</servlet-mapping>
+
+
+
+</web-app>

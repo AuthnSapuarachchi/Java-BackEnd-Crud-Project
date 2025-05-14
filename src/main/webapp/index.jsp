@@ -31,6 +31,8 @@
 
 <!-- Example as a submit button in a form -->
 <a href="bookingForm" class="book-btn">Book Event</a>
+<a href="login" class="book-btn">Login</a>
+<a href="register" class="book-btn">Register</a>
 
 
 <!-- Or as a standalone button/link -->

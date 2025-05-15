@@ -6,8 +6,26 @@
 	version="3.1">
 
 	<welcome-file-list>
-		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>homepage.jsp</welcome-file>
 	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>DisplayEventServlet</servlet-name>
+		<servlet-class>sliit.eventmng.controller.DisplayEventServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DisplayEventServlet</servlet-name>
+		<url-pattern>/event</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>HomeViewServlet</servlet-name>
+		<servlet-class>sliit.eventmng.controller.HomeViewServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HomeViewServlet</servlet-name>
+		<url-pattern>/home</url-pattern>
+	</servlet-mapping>
 
 	<servlet>
 		<servlet-name>BookingFormServlet</servlet-name>

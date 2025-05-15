@@ -20,6 +20,7 @@ public class RegisterServlet extends HttpServlet {
 			User user = new User();
 			user.setUsername(request.getParameter("username"));
 			user.setEmail(request.getParameter("email"));
+			user.setPhone(request.getParameter("phone"));
 			user.setPassword(request.getParameter("password"));
 
 			if (userDao.registerUser(user)) {

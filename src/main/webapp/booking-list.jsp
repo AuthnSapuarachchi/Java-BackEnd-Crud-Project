@@ -1,56 +1,64 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>All Bookings</title>
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons CDN (for button icons, optional) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<title>All Bookings</title>
+<!-- Bootstrap 5 CDN -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+	rel="stylesheet">
+<!-- Bootstrap Icons CDN (for button icons, optional) -->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
 </head>
+<%@ include file="header.jsp"%>
 <body class="bg-light">
 
-<div class="container py-4">
-    <h1 class="mb-4 text-center">Booking List</h1>
-    <div class="row g-4">
-        <c:forEach items="${bookings}" var="booking">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card shadow-sm h-100">
-                    <div class="card-header bg-primary text-white">
-                        <h5 class="mb-0">Booking #${booking.id}</h5>
-                    </div>
-                    <div class="card-body">
-                        <ul class="list-unstyled mb-3">
-                            <li><strong>Name:</strong> ${booking.fullName}</li>
-                            <li><strong>Email:</strong> ${booking.email}</li>
-                            <li><strong>Contact:</strong> ${booking.conNumber}</li>
-                            <li><strong>Date:</strong> ${booking.date}</li>
-                        </ul>
-                        <c:if test="${not empty booking.specRequirment}">
-                            <div class="alert alert-info py-2">
-                                <strong>Special Requirements:</strong><br>
-                                ${booking.specRequirment}
-                            </div>
-                        </c:if>
-                    </div>
-                    <div class="card-footer bg-white border-0 d-flex justify-content-end gap-2">
-                        <a href="editBooking?id=${booking.id}" class="btn btn-sm btn-warning">
-                            <i class="bi bi-pencil-square"></i> Edit
-                        </a>
-                        <a href="deleteBooking?id=${booking.id}" class="btn btn-sm btn-danger"
-                           onclick="return confirm('Are you sure you want to delete this booking?');">
-                            <i class="bi bi-trash"></i> Delete
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </c:forEach>
-    </div>
-</div>
 
-<!-- Bootstrap JS (optional, for interactivity) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	<div class="container py-4">
+		<h1 class="mb-4 text-center">Booking List</h1>
+		<div class="row g-4">
+			<c:forEach items="${bookings}" var="booking">
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="card shadow-sm h-100">
+						<div class="card-header bg-primary text-white">
+							<h5 class="mb-0">Booking #${booking.id}</h5>
+						</div>
+						<div class="card-body">
+							<ul class="list-unstyled mb-3">
+								<li><strong>Name:</strong> ${booking.fullName}</li>
+								<li><strong>Email:</strong> ${booking.email}</li>
+								<li><strong>Contact:</strong> ${booking.conNumber}</li>
+								<li><strong>Date:</strong> ${booking.date}</li>
+							</ul>
+							<c:if test="${not empty booking.specRequirment}">
+								<div class="alert alert-info py-2">
+									<strong>Special Requirements:</strong><br>
+									${booking.specRequirment}
+								</div>
+							</c:if>
+						</div>
+						<div
+							class="card-footer bg-white border-0 d-flex justify-content-end gap-2">
+							<a href="editBooking?id=${booking.id}"
+								class="btn btn-sm btn-warning"> <i
+								class="bi bi-pencil-square"></i> Edit
+							</a> <a href="deleteBooking?id=${booking.id}"
+								class="btn btn-sm btn-danger"
+								onclick="return confirm('Are you sure you want to delete this booking?');">
+								<i class="bi bi-trash"></i> Delete
+							</a>
+						</div>
+					</div>
+				</div>
+			</c:forEach>
+		</div>
+	</div>
+
+	<!-- Bootstrap JS (optional, for interactivity) -->
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

@@ -22,7 +22,8 @@ public class LoginValidationServlet extends HttpServlet {
 
 		if (userDao.validateUser(username, password)) {
 			request.getSession().setAttribute("username", username);
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("homepage.jsp");
+			
 		} else {
 			response.sendRedirect("error.jsp?error=1");
 		}
